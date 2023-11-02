@@ -149,3 +149,152 @@ with open("sample.txt", "a") as file:
 with open("sample.txt", "r") as file:
     updated_contents = file.read()
 print(updated_contents)
+
+
+#------------------------------------PATTERN PROBLEM 
+# Pattern 1: Right Triangle
+for i in range(1, 6):
+    print("*" * i)
+
+# Pattern 2: Upside-Down Right Triangle
+for i in range(5, 0, -1):
+    print("*" * i)
+
+# Pattern 3: Hollow Rectangle
+width = 5
+height = 4
+for i in range(height):
+    if i == 0 or i == height - 1:
+        print("*" * width)
+    else:
+        print("*" + " " * (width - 2) + "*")
+
+# Pattern 4: Pyramid
+n = 5
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+
+# Pattern 5: Diamond
+n = 5
+for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+for i in range(n - 1, 0, -1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+
+# Pattern 6: Inverted Pyramid
+n = 5
+for i in range(n, 0, -1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+
+# Pattern 7: Number Triangle
+n = 5
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+
+# Pattern 8: Pascal's Triangle
+def generate_pascals_triangle(n):
+    def generate_next_row(prev_row):
+        new_row = [1]
+        for i in range(1, len(prev_row)):
+            new_row.append(prev_row[i - 1] + prev_row[i])
+        new_row.append(1)
+        return new_row
+
+    triangle = []
+    row = [1]
+    triangle.append(row)
+    for _ in range(n - 1):
+        row = generate_next_row(row)
+        triangle.append(row)
+
+    return triangle
+
+n = 5
+pascals_triangle = generate_pascals_triangle(n)
+for row in pascals_triangle:
+    print(" ".join(map(str, row)).center(n * 3))
+
+# Pattern 9: 180-Degree Rotated Right Triangle
+for i in range(1, 6):
+    print(" " * (5 - i) + "*" * i)
+
+# Pattern 10: Number Pyramid
+n = 5
+for i in range(1, n + 1):
+    print(" " * (n - i) + " ".join(map(str, range(i, 0, -1))) + " ".join(map(str, range(2, i + 1)))
+
+
+#__________________________________________________matrix____________________
+def print_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+def add_matrices(matrix1, matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        raise ValueError("Matrix dimensions must match for addition.")
+    
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j] + matrix2[i][j])
+        result.append(row)
+    
+    return result
+
+def subtract_matrices(matrix1, matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        raise ValueError("Matrix dimensions must match for subtraction.")
+    
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j] - matrix2[i][j])
+        result.append(row)
+    
+    return result
+
+def multiply_matrices(matrix1, matrix2):
+    if len(matrix1[0]) != len(matrix2):
+        raise ValueError("Number of columns in the first matrix must match the number of rows in the second matrix.")
+    
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix2[0]):
+            element = 0
+            for k in range(len(matrix2)):
+                element += matrix1[i][k] * matrix2[k][j]
+            row.append(element)
+        result.append(row)
+    
+    return result
+
+# Define two example matrices
+matrix_A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrix_B = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+# Print the matrices
+print("Matrix A:")
+print_matrix(matrix_A)
+
+print("\nMatrix B:")
+print_matrix(matrix_B)
+
+# Perform matrix operations
+matrix_sum = add_matrices(matrix_A, matrix_B)
+matrix_diff = subtract_matrices(matrix_A, matrix_B)
+matrix_product = multiply_matrices(matrix_A, matrix_B)
+
+# Print the results
+print("\nMatrix Sum (A + B):")
+print_matrix(matrix_sum)
+
+print("\nMatrix Difference (A - B):")
+print_matrix(matrix_diff)
+
+print("\nMatrix Product (A * B):")
+print_matrix(matrix_product)
