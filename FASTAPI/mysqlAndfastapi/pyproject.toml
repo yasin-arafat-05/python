@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mysqlandfastapi"
+version = "0.1.0"
+description = ""
+authors = ["yasin-arafat-05 <yasinarafat.e2021@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = "^0.23.2"
+sqlalchemy = "^2.0.22"
+pymysql = "^1.1.0"
+cryptography = "^41.0.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

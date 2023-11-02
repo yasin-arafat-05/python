@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <style>
+        .main{
+            background-color: blue;
+            color: rgb(97, 42, 42);
+            padding: 20px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    {%for n in clist%}
+    <div class="main">{{n}}</div>
+    {%endfor%}
+</body>
+</html>
