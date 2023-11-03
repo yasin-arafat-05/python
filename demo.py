@@ -9,6 +9,8 @@ print("_________DATA TYPE________")
 print(type(k))
 print(type(l))
 print(type(m))
+print("save this file ")
+
 
 print("_________TYPE CASTING_______")
 k = str(k)
