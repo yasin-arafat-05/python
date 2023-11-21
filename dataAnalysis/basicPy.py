@@ -82,11 +82,33 @@ for i, val in enumerate(a_list):
 #problem: 6 
 #solve with functoin.
 '''
-Radha is planning to buy a house that costs $1,260,000. She considering two options to finance her purchase:
-    Option 1: Make an immediate down payment of $300,000, and take loan 8-year loan with an
- interest rate of 10% (compounded monthly) for the remaining amount.
-
-    Option 2: Take a 10-year loan with an interest rate of 8% (compounded monthly) for the entire amount.
-Both these loans have to be paid back in equal monthly installments (EMIs). Which loan has a lower EMI among the two?
+Try-except:
+divison by 0
 '''
 print("--------------------------Problem: 06-------------------------------")
+
+def devision(x:int):
+    try:
+        ans = 5/x
+        print(f"ans: {ans}")
+    except:
+        print("divisible by 0")
+devision(0)
+
+#problem:07
+#Documenting functions using Docstrings
+'''
+write a program. substraction of two number and Use DocString.
+'''
+print("--------------------------Problem: 07-------------------------------")
+
+def subtracation(x:int,y:int):
+    """
+    x -> first number.
+    y -> second number.
+    here, x>y
+    """
+    help(subtracation)
+    diff = x -y 
+    print("subtraction: {}".format(diff))
+subtracation(45,5)
