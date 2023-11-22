@@ -41,7 +41,7 @@ sinnoh_np = np.array(sinnoh)
 unova_np=np.array(unova)
 weights_np=np.array(weights)
 print("we have same result by using dot in numpy: ",end="")
-print(np.dot(kanto_np,weights_np))
+print(np.dot(kanto_np,weights_np))  #done with dot product
 print(f"element wize multiplication: {kanto_np*weights_np}")
 print(f"similarly: {(kanto_np*weights_np).sum()}")
 
