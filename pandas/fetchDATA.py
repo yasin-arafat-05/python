@@ -51,3 +51,41 @@ print("<----------------------------------Access Multiple Column----------------
 print(covid_df[['new_cases','new_tests']])
 print(covid_df.at[243,'new_tests'])
 print(f"<--------------------fetch a single column:---------------------> \n {covid_df.loc[243]}")
+
+
+print()
+print("<----------------fetch first five values from the covid_df---------------------->")
+print(covid_df.head(5))
+
+
+print()
+print("<----------------fetch last five values from the covid_df---------------------->")
+print(covid_df.tail(5))
+
+
+print()
+print("<--------------------type of NaN ---------------------------->")
+print(covid_df.loc[1,"new_tests"])
+print(type(covid_df.loc[1,"new_tests"]))
+
+
+print()
+print("<----------- first index that doesn't contain-------------->")
+print(f"{covid_df.new_tests.first_valid_index()}")
+print()
+print(f"{covid_df.loc[109:113]}")
+
+print()
+print("<-------------Randomly fetch data-------------->")
+print(f"{covid_df.sample(10)}")
+
+'''
+Here's a summary of the functions & methods we looked at in this section:
+covid_df['new_cases'] - Retrieving columns as a Series using the column name
+new_cases[243] - Retrieving values from a Series using an index
+covid_df.at[243, 'new_cases'] - Retrieving a single value from a data frame
+covid_df.copy() - Creating a deep copy of a data frame
+covid_df.loc[243] - Retrieving a row or range of rows of data from the data frame
+head, tail, and sample - Retrieving multiple rows of data from the data frame
+covid_df.new_tests.first_valid_index - Finding the first non-empty index in a series
+'''

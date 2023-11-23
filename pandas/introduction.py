@@ -31,3 +31,13 @@ print(covid_df.columns)
 print()
 print("------------------Shape Of the dataFrame---------------")
 print(covid_df.shape)
+
+'''
+Here's a summary of the functions & methods we've looked at so far:
+
+pd.read_csv - Read data from a CSV file into a Pandas DataFrame object
+.info() - View basic infomation about rows, columns & data types
+.describe() - View statistical information about numeric columns
+.columns - Get the list of column names
+.shape - Get the number of rows & columns as a tuple
+'''
