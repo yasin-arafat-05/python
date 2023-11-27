@@ -6,3 +6,12 @@ urllib.request.urlretrieve(italy_covid_url,"covid_in_italy.csv")
 import pandas as np 
 covid_Itely = np.read_csv('./covid_in_italy.csv')
 print(covid_Itely)
+
+print("___________________Sum-of-a-column_________________")
+print(f"sum of total deaths \n {covid_Itely.new_deaths.sum()}") 
+
+#NaN values get ignored.
+print(f"sum of total new_cases \n {covid_Itely.new_cases.sum()}")
+date_rate = (covid_Itely.new_deaths.sum()/covid_Itely.new_cases.sum() )*100
+print("date rate: \n {:.2f}%".format(date_rate))
+
