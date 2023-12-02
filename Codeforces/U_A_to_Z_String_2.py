@@ -1,0 +1,29 @@
+a,b = map(int,input().split())
+str = 'A'*a 
+str+= 'B'*a 
+str+= 'C'*a 
+str+= 'D'*a 
+str+= 'E'*a
+str+= 'F'*a 
+str+='G'*a
+str+= 'H'*a 
+str+= 'I'*a 
+str+= 'J'*a 
+str+='k'*a 
+str+= 'L'*a 
+str+= 'M'*a 
+str+= 'N'*a 
+str+= 'O'*a 
+str+= 'P'*a 
+str+= 'Q'*a 
+str+= 'R'*a 
+str+= 'S'*a 
+str+= 'T'*a 
+str+= 'U'*a 
+str+= 'V'*a 
+str+= 'W'*a 
+str+= 'X'*a 
+str+= 'Y'*a 
+str+='Z'*a
+#print(str)
+print(str[b-1])
